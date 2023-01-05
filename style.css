@@ -1,0 +1,691 @@
+@charset "UTF-8";
+
+body {
+  font-family: "Alex Brush", cursive;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  width: 100%;
+  background-color: rgba(24, 36, 69, 0.7); /*#182445を70%透過*/
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  padding-left: 30px;
+}
+
+.logo {
+  width: 100px;
+}
+
+/*トップ画面表示の設定*/
+.visual {
+  background-image: url(../images/bar_header2.jpg);
+  background-size: cover;
+  height: 220px;
+  padding-top: 83px;
+}
+
+/*キャッチ部分の表示設定*/
+.catch {
+  color: #d2dcdc;
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 80%;
+  position: relative;
+  display: flex;
+  padding: 0 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.catch::before,
+.catch::after {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background-color: #d2dcdc;
+}
+
+.catch::before {
+  margin-right: 5px;
+}
+
+.catch::after {
+  margin-left: 5px;
+}
+
+/* ここから下がハンバーガーメニューに関するCSS */
+/*　幅1024px未満では、グローバルナビ非表示　*/
+.global_navi {
+  display: none;
+}
+
+/*　ハンバーガーメニューの設定　*/
+.menu-btn {
+  position: fixed;
+  top: 0px;
+  right: 10px;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+}
+
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  position: absolute;
+}
+
+.menu-btn span:before {
+  bottom: 8px;
+}
+
+#menu-btn-check {
+  display: none;
+}
+
+.menu-btn span:after {
+  top: 8px;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(255, 255, 255, 0);
+  /*メニューオープン時は真ん中の線を透明にする*/
+}
+
+#menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.menu-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 80;
+  background-color: #182445;
+  opacity: 0.8;
+  /*モバイル用メニューが開いた時の背景色を半透明にする*/
+  transition: all 0.5s;
+  /*アニメーション設定*/
+}
+
+#menu-btn-check:checked ~ .menu-content {
+  left: 0;
+  /*メニューを画面内へ*/
+}
+
+.menu-content ul {
+  padding: 70px 10px 0;
+}
+
+.menu-content ul li {
+  border-bottom: solid 1px #ffffff;
+  list-style: none;
+}
+
+.menu-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 9px 15px 10px 0;
+  position: relative;
+}
+
+.menu-content ul li a::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: solid 2px #ffffff;
+  border-right: solid 2px #ffffff;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 11px;
+  top: 16px;
+}
+/**ここまでハンバーガーメニューの設定**/
+
+.contents {
+  background-color: #182445;
+  padding: 60px 0;
+}
+.feature {
+  width: 280px;
+  margin: 0 auto 97px;
+  color: #fff;
+}
+
+/*英字付き見出しの設定*/
+.item {
+  position: relative;
+  padding-top: 10px;
+  font-size: 24px;
+  color: #fff;
+  margin: 37px auto 40px;
+  text-align: center;
+}
+
+.item span {
+  position: relative;
+  z-index: 2;
+}
+
+.item::before {
+  content: attr(data-en);
+  position: absolute;
+  transform: rotate(-5deg) translateX(-45%);
+  top: -20px;
+  left: 47%;
+  color: #ceb576;
+  font-size: 36px;
+  font-family: "Alex Brush", cursive;
+}
+
+/*おすすめポイントの表示設定*/
+.recommend-menu {
+  width: 280px;
+  margin: auto;
+}
+
+.food-menu img {
+  width: 280px;
+}
+
+figcaption {
+  width: 240px;
+  height: 156px; /*PC幅で横並びにしても高さを同一にするため*/
+  margin: 0 20px;
+}
+
+.food {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 20px;
+}
+
+.food-detail {
+  margin-bottom: 30px;
+  width: 280px;
+  background-color: #fff;
+}
+
+.para {
+  color: #fff;
+  width: 280px;
+  margin: 10px auto 0;
+}
+
+/*MENU一覧ボタンの設定*/
+.menulink {
+  background-color: #fff;
+  color: #182445;
+  font-weight: bold;
+  width: 280px;
+  padding: 15px;
+  padding-left: 70px;
+  display: block;
+  margin: 40px auto 0;
+  text-align: center;
+  border: solid 1px #182445;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.menulink::after {
+  content: ">";
+  margin-left: 3rem;
+  color: #182445;
+  transition: 0.3s;
+}
+
+.menulink:hover {
+  color: #ceb576;
+}
+.menulink:hover::after {
+  color: #ceb576;
+}
+
+/*アクセス＆予約の設定*/
+.wrapper {
+  background-color: #597594;
+  padding: 50px 0 60px;
+}
+
+.address {
+  width: 280px;
+  margin: auto;
+}
+
+/*モバイル幅では、google mapの大きさを280px角にする*/
+iframe {
+  width: 280px;
+  height: 280px;
+}
+
+/*アクセス説明の表記設定*/
+.address table {
+  color: #fff;
+  font-weight: normal;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 25px auto 70px;
+  width: 100%;
+}
+
+.address th {
+  padding: 5px 0;
+}
+
+.address td {
+  padding: 5px 5px 5px 14px;
+  line-height: 1.5;
+}
+
+/*問合せフォームの設定*/
+.contact {
+  color: #333; /*フォームへの入力は黒で表示*/
+  font-size: 16px;
+  margin: 30px 0;
+}
+
+.contact dt {
+  font-size: 12px;
+  color: #fff; /*項目名は白で表示*/
+  width: 280px;
+  margin: auto;
+}
+
+.shorttype {
+  background-color: #fff;
+  width: 280px;
+  height: 40px;
+  margin: 10px auto 20px;
+}
+
+.message {
+  background-color: #fff;
+  width: 280px;
+  height: 240px;
+  margin: 10px auto 30px;
+}
+
+textarea {
+  width: 100%;
+  height: 240px;
+}
+
+/*送信ボタンの設定*/
+.submit {
+  background-color: #182445;
+  border: solid 1px #597594;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  width: 280px;
+  margin: auto;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.submit:hover {
+  background-color: #fff;
+  color: #597594;
+  cursor: pointer;
+}
+
+/*その他問合せ方法の設定*/
+.contact-others {
+  width: 280px;
+  margin: auto;
+}
+
+.contact-table {
+  color: #fff;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.contact-table td {
+  padding: 5px 15px 5px 0px;
+}
+
+footer {
+  background-color: #182445;
+}
+
+footer p {
+  color: #fff;
+  font-size: 12px;
+  padding: 7px 0 7px 30px;
+}
+
+@media screen and (min-width: 960px) {
+  /*header～写真までの設定*/
+  header {
+    height: 60px;
+    padding-left: 0;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  .head-and-navi {
+    display: flex;
+    width: 860px;
+    margin: auto;
+    justify-content: space-between;
+  }
+
+  .visual {
+    height: 500px;
+    padding-top: 210px;
+  }
+
+  .catch {
+    font-size: 24px;
+  }
+
+  .feature {
+    width: 450px;
+  }
+
+  /*メニュー表示設定*/
+  .hamburger-menu {
+    display: none;
+  }
+
+  .global_navi {
+    display: contents;
+    color: #fff;
+  }
+
+  .nav-items {
+    list-style: none;
+    display: flex; /*グローバルメニューの横並び表示*/
+    margin-top: 12px;
+  }
+
+  .nav-item_item {
+    display: block;
+    padding: 3px 20px;
+  }
+
+  .nav-insta {
+    padding-right: 0;
+  }
+
+  /*おすすめを横並びにする*/
+  .recommend-menu {
+    display: flex;
+    width: 860px;
+  }
+
+  .food-detail {
+    margin: 0;
+  }
+
+  .food-menu {
+    justify-content: space-between;
+  }
+
+  .food-center {
+    margin: 0 10px;
+  }
+
+  .para {
+    width: 450px;
+  }
+
+  /*Accessと予約の横並び*/
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    width: 860px;
+    margin: auto;
+  }
+
+  /*Accessの横幅を400pxにする*/
+  iframe {
+    width: 400px;
+    height: 400px;
+  }
+
+  .address {
+    width: 400px;
+    margin: auto;
+  }
+
+  /*予約部分*/
+  .para-reserve {
+    width: 400px;
+  }
+  .contact dt {
+    width: 400px;
+  }
+
+  .shorttype {
+    width: 400px;
+  }
+
+  .message {
+    width: 400px;
+  }
+
+  .submit {
+    width: 400px;
+  }
+
+  .contact-others {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  /*header～写真までの設定*/
+  header {
+    height: 85px;
+  }
+
+  .logo {
+    width: 300px;
+  }
+
+  .head-and-navi {
+    width: 1020px;
+  }
+
+  .nav-items {
+    margin-top: 30px;
+  }
+
+  .nav-item_item {
+    font-size: 18px;
+    padding: 0 25px;
+  }
+
+  .nav-insta {
+    padding-right: 0;
+  }
+
+  .visual {
+    height: 733px;
+    padding-top: 290px;
+  }
+
+  .catch {
+    font-size: 48px;
+  }
+
+  .catch::before,
+  .catch::after {
+    width: 50px;
+  }
+
+  .feature {
+    width: 860px;
+    font-size: 20px;
+  }
+
+  .contents {
+    padding: 80px 0;
+  }
+
+  /*見出しの設定*/
+  .item {
+    font-size: 30px;
+    margin: 90px auto 80px;
+  }
+
+  .item::before {
+    font-size: 48px;
+    top: -30px;
+    left: 49%;
+  }
+
+  /*おすすめ設定*/
+  .recommend-menu {
+    width: 1020px;
+  }
+
+  .food {
+    font-size: 20px;
+  }
+
+  .food-center {
+    margin: 0 90px;
+  }
+
+  figcaption {
+    font-size: 18px;
+    height: 170px;
+  }
+
+  .food-detail {
+    margin-bottom: 60px;
+  }
+
+  .para {
+    font-size: 20px;
+    width: 663px;
+  }
+
+  /*MENUへのリンクボタン設定*/
+  .menulink {
+    width: 460px;
+    height: 85px;
+    border-radius: 10px;
+    font-size: 24px;
+    padding: 25px 10px 25px 110px;
+    margin: 60px auto 0;
+  }
+
+  .menulink::after {
+    margin-left: 6rem;
+  }
+
+  /*アクセス・予約の設定*/
+  .wrapper {
+    padding: 0 0 80px 0;
+  }
+
+  .inner {
+    width: 1020px;
+  }
+
+  iframe {
+    width: 450px;
+    height: 450px;
+  }
+
+  .address table {
+    font-size: 20px;
+  }
+
+  .para-reserve {
+    width: 447px;
+  }
+
+  /*問合せフォーム設定*/
+  .contact {
+    margin: 40px 0 60px;
+  }
+  .contact-table {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+
+  .shorttype,
+  .message {
+    width: 447px;
+  }
+
+  .message {
+    margin-bottom: 50px;
+  }
+
+  .contact dt {
+    font-size: 20px;
+    font-weight: normal;
+    width: 447px;
+  }
+
+  .submit {
+    width: 447px;
+    height: 72px;
+    border-radius: 20px;
+    font-size: 24px;
+  }
+
+  .contact-others {
+    width: 447px;
+  }
+
+  /*footer*/
+  footer {
+    height: 50px;
+  }
+
+  footer p {
+    font-size: 20px;
+    width: 1020px;
+    margin: auto;
+    padding: 10px 0;
+  }
+}
