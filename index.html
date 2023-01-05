@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="css/destyle.css" />
+
+    <!--Awesome Fontの読み込み-->
+    <script
+      src="https://kit.fontawesome.com/4efa30906d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Googleフォントの読み込み：Noto Sans JP & Alex Brush-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>〇〇〇カフェ＆バル</title>
+  </head>
+
+  <body>
+    <!-- 本文 -->
+    <header>
+      <div class="head-and-navi">
+        <h1 class="logo">
+          <a href="index.html"
+            ><img
+              src="images/logo_white.png"
+              alt="〇〇〇カフェ＆バル"
+              class="logotitle"
+          /></a>
+        </h1>
+
+        <nav class="global_navi">
+          <ul class="nav-items">
+            <li><a href="#" class="nav-item_item">MENU</a></li>
+            <li><a href="#Access" class="nav-item_item">Access</a></li>
+            <li><a href="#Reserve" class="nav-item_item">Reservation</a></li>
+            <li><a href="#" class="nav-item_item nav-insta">Instagram</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- ハンバーガーメニュー部分 -->
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check" />
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+          <ul>
+            <li>
+              <a href="#">MENU</a>
+            </li>
+            <li>
+              <a href="#Access">Access</a>
+            </li>
+            <li>
+              <a href="#Reserve">Reservation</a>
+            </li>
+            <li>
+              <a href="#">Instagram</a>
+            </li>
+            <li>
+              <a href="#">Back to Home</a>
+            </li>
+          </ul>
+        </div>
+        <!--ここまでメニュー-->
+      </div>
+    </header>
+
+    <main>
+      <div class="visual">
+        <!-- <img src="images/bar_header2.jpg" alt="バーカウンター"> -->
+        <h2 class="catch">大人が集う、くつろぎの空間を</h2>
+      </div>
+      <div class="contents">
+        <p class="feature">
+          おひとりでも、一杯だけでも、お気軽に立ち寄れる洋風カフェバルです。<br />
+          自転車乗りのマスターと気さくでスイーツ好きのママが、皆様のお越しをお待ちしております。
+        </p>
+
+        <h3 class="item" data-en="Recommend">おすすめ</h3>
+
+        <ul class="recommend-menu">
+          <li class="food-detail">
+            <figure class="food-menu">
+              <img src="images/smokedassociates.jpg" alt="燻製盛合せ" />
+
+              <h4 class="food">マスター特製の燻製</h4>
+              <figcaption>
+                レバー、鶏肉、チーズ、豆腐、たまご、たくあんなど、他では味わえないオリジナルの燻製をご賞味ください。
+                （内容は、その日の仕入れにより変わります）
+              </figcaption>
+            </figure>
+          </li>
+
+          <li class="food-detail food-center">
+            <figure class="food-menu">
+              <img src="images/food2.jpg" alt="アヒージョ" />
+
+              <h4 class="food">ママ特製のアヒージョ</h4>
+              <figcaption>
+                地元福岡で採れた海鮮と野菜を使っています。<br />
+                バケットを付けることもできます（別料金となります）。
+              </figcaption>
+            </figure>
+          </li>
+
+          <li class="food-detail">
+            <figure class="food-menu">
+              <img src="images/foos3.jpg" alt="お客様同士の交流" />
+
+              <h4 class="food">お客様同士の交流</h4>
+              <figcaption>
+                地元のお客様が多く、いつの間にかお客様同士で語り合っていることもしばしば。<br />
+                何か素敵な情報交換が出来るかもしれません。
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+        <p class="para">
+          その他、各種お酒やおつまみにピッタリなお料理をご用意しております。
+        </p>
+        <a href="#" class="menulink">MENU一覧を見る</a>
+      </div>
+
+      <div class="wrapper">
+        <div class="inner">
+          <div class="access">
+            <h3 class="item" data-en="Access" id="Access">アクセス</h3>
+            <div class="address">
+              <!--Google MAP埋め込み-->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.6002306746655!2d130.41853871520297!3d33.58972748073436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb180f30077bd989f!2zSlLljZrlpJrpp4XliY3luoPloLQ!5e0!3m2!1sja!2sjp!4v1661345426921!5m2!1sja!2sjp"
+                width="450"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+
+              <table>
+                <tr>
+                  <th>住所</th>
+                  <td>
+                    福岡市○区○○○○丁目○ー○<br />
+                    ○○線○○駅より徒歩２分
+                  </td>
+                </tr>
+                <tr>
+                  <th>営業時間</th>
+                  <td>18:30～24:00</td>
+                </tr>
+                <tr>
+                  <th>定休日</th>
+                  <td>水曜日</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="reservation">
+            <h3 class="item" data-en="Reservation" id="Reserve">ご予約</h3>
+            <p class="para para-reserve">
+              ご予約は、下記フォームよりお問合せください。
+            </p>
+
+            <div class="contact">
+              <form action="mail.php" method="post">
+                <dl>
+                  <dt>お名前</dt>
+                  <dd class="shorttype">
+                    <input type="text" name="your-name" size="30 " />
+                  </dd>
+                  <dt>メールアドレス</dt>
+                  <dd class="shorttype">
+                    <input type="email" name="mail-address" id="email" />
+                  </dd>
+                  <dt>お電話番号</dt>
+                  <dd class="shorttype">
+                    <input type="tel" name="tel" id="mobile" />
+                  </dd>
+                  <dt>メッセージ（日時、人数などお知らせください）</dt>
+                  <dd class="message">
+                    <textarea
+                      name="comment"
+                      minlength="5"
+                      maxlength="300"
+                      wrap="hard"
+                      required
+                    ></textarea>
+                  </dd>
+                </dl>
+                <p class="submit">
+                  <input type="submit" value="送信" />
+                </p>
+              </form>
+            </div>
+
+            <div class="contact-others">
+              <p class="para para-reserve">
+                InstagramのDMやお電話でも、お問合せを受け付けております。
+              </p>
+
+              <table class="contact-table">
+                <tr>
+                  <td><i class="fa-brands fa-instagram"></i></td>
+                  <td><a href="#">@xxxx_xxxxx</a></td>
+                </tr>
+                <tr>
+                  <td><i class="fa-solid fa-phone"></i></td>
+                  <td>090-XXXX-XXXX</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>&copy;2022 All Rights Reserved.</p>
+      </footer>
+    </main>
+  </body>
+</html>
