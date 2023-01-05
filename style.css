@@ -33,7 +33,7 @@ header {
 
 /*トップ画面表示の設定*/
 .visual {
-  background-image: url(./bar_header2.jpg);
+  background-image: url(https://github.com/aki-masunaga/sample-bar/blob/main/bar_header2.jpg);
   background-size: cover;
   height: 220px;
   padding-top: 83px;
