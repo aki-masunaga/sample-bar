@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.html{
+overflow-x: hidden;
+}
+
 body {
   font-family: "Alex Brush", cursive;
   font-family: "Noto Sans JP", sans-serif;
